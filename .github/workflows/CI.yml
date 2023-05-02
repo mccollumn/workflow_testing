@@ -64,7 +64,7 @@ jobs:
           echo ${Env.PRODUCT_VERSION}
           echo ${Env.ARTIFACT_NAME}
 
-        - name: Test variables 7
+      - name: Test variables 7
         run: |
           echo ${{ PRODUCT_VERSION }}
           echo ${{ ARTIFACT_NAME }}
