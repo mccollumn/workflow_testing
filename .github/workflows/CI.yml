@@ -90,14 +90,14 @@ jobs:
       #   shell: bash
       #   run: ./installer/build_installer.sh -v $Env:PRODUCT_VERSION
 
-      # - name: Zip Installer
-      #   # shell: pwsh
-      #   run: Compress-Archive -Force -Path ./installer/Output/* -DestinationPath "./installer/$Env.ARTIFACT_NAME.zip"
+      - name: Zip Test
+        # shell: pwsh
+        run: Compress-Archive -Force -Path ./src/* -DestinationPath "./${{ Env.ARTIFACT_NAME }}.zip"
 
-      # - run: ls ./installer
+      - run: ls ./installer
 
-      # - name: Upload the installer as an artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     path: ./installer/$Env.ARTIFACT_NAME.zip
-      #     name: $Env.ARTIFACT_NAME
+      - name: Upload the installer as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./${{ Env.ARTIFACT_NAME }}.zip
+          name: ${{ Env.ARTIFACT_NAME }}
