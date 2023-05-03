@@ -94,7 +94,7 @@ jobs:
         # shell: pwsh
         run: Compress-Archive -Force -Path ./src/* -DestinationPath "./${{ Env.ARTIFACT_NAME }}.zip"
 
-      - run: ls ./installer
+      - run: ls ./
 
       - name: Upload the installer as an artifact
         uses: actions/upload-artifact@v3
